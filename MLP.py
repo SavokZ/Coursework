@@ -40,7 +40,7 @@ class MLP(nn.Module):
 
 criterion = nn.CrossEntropyLoss()
 
-print("\n=== No regularization ===\n")
+print("\nNo regularization\n")
 model = MLP()
 opt = optim.Adam(model.parameters(), lr=0.001)
 train_losses, val_losses = [], []
@@ -76,7 +76,7 @@ apriori_stop = 15
 
 print(f"\nHold-out: epoch {hold_stop} | Ratio: epoch {ratio_stop} | Apriori: epoch {apriori_stop}")
 
-print("\n=== L2 regularization ===\n")
+print("\nL2 regularization\n")
 model_l2 = MLP()
 opt_l2 = optim.Adam(model_l2.parameters(), lr=0.001, weight_decay=1e-5)
 train_losses_l2, val_losses_l2 = [], []
